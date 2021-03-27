@@ -3,14 +3,15 @@
 ## Getting Started
 
 ### 1. Prequisites and cloning the repository
-```bash
 
-Please install the Node package manager (npm)
+Please install Node.js for Node package manager (npm) and Git version control software 
+
+```bash
 # Clone the Repo
 clone the repository by git clone https://github.com/kanhaiya-mishra/library-management-module.git
 
 # Change directory
-move library-management-module by cd library-management-module
+move to library-management-module folder by cd library-management-module
 ```
 
 ### 2. Install dependencies

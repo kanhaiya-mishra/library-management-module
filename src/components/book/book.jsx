@@ -2,8 +2,10 @@ import React from "react";
 import "./book.css"
 import { BOOK_NAME_LENGTH, BOOK_AUTHOR_LENGTH, BOOK_DESCRIPTION_LENGTH } from "../../utils/contants";
 
+// Form component to Add a new book or Edit a book
 function Book(props) {
 
+   // Event delegation
    function onTextUpdate(event) {
       if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
          const dataAttribute = event.target.dataset.bookMeta;
@@ -26,6 +28,7 @@ function Book(props) {
       }
    }
 
+   // Event delegation
    function onFormClick(event) {
       if (event.target.tagName === "BUTTON") {
          const dataAttribute = event.target.dataset.action;

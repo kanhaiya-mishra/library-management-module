@@ -5,6 +5,10 @@ import Validator from "../services/validator";
 
 const validator = new Validator();
 
+// Saving books in localstorage
+// Initializing books from localstorage
+// filteredBooks is for search results
+
 let initialState = {
    books: LocalStorageService.getBooks(),
    book: new Book(),
@@ -17,6 +21,7 @@ const reducer = (state = initialState, action) => {
    let newBook;
    switch (action.type) {
       case 'SET_BOOK_BY_ID':
+         // In case of edit book, state.book becomes the book user is looking for
          newBook = state.books.filter((book) => {
             return book._id === action.payload;
          })
@@ -26,14 +31,8 @@ const reducer = (state = initialState, action) => {
             book: newBook
          }
          return newState;
-      case 'SET_BOOKS':
-         LocalStorageService.setBooks(action.payload);
-         newState = {
-            ...state,
-            books: action.payload
-         }
-         return newState;
       case 'ADD_BOOK':
+         // Validate book entries before adding it to the list
          if (!validator.validateBook(state.book)) {
             return state;
          }
@@ -82,6 +81,7 @@ const reducer = (state = initialState, action) => {
          }
          return newState;
       case 'SAVE_BOOK':
+         // Update book details
          if (!validator.validateBook(state.book)) {
             return state;
          }
@@ -116,6 +116,7 @@ const reducer = (state = initialState, action) => {
          LocalStorageService.setBooks(newState.books);
          return newState;
       case 'SEARCH_BOOKS':
+         // If user searches with AND operator, we try to find all matching params in a book
          if (action.payload.operator === "AND") {
             newBooks = state.books.filter((book) => {
                if (action.payload.name.length > 0 && !book._name.includes(action.payload.name)) {
@@ -140,6 +141,7 @@ const reducer = (state = initialState, action) => {
                filteredBooks: newBooks
             }
          } else if (action.payload.operator === "OR") {
+            // If user searches with OR operator, we try to find any matching params in a book
             newBooks = state.books.filter((book) => {
                if (action.payload.name.length > 0 && book._name.includes(action.payload.name)) {
                   return true;
@@ -163,7 +165,11 @@ const reducer = (state = initialState, action) => {
                filteredBooks: newBooks
             }
          } else {
-            newState = state;
+            // If we dont get any valid operator, show nothing
+            newState = {
+               ...state,
+               filteredBooks: []
+            }
          }
          return newState;
       default:

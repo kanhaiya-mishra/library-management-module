@@ -1,3 +1,4 @@
+// Store books in local storage
 class LocalStorageService {
    static setBooks(books) {
       localStorage.setItem('books', JSON.stringify(books));

@@ -34,6 +34,7 @@ class Search extends React.Component {
    }
 
    setSearchState() {
+      // Set component state from the seach query in URL
       let search = this.props.location.search;
       if (search && search.length > 0) {
          const url = new URL(
@@ -53,6 +54,7 @@ class Search extends React.Component {
             }
          });
       } else {
+         // If we dont get seach query, empty the state
          this.setState({
             name: "",
             authorName: "",
@@ -66,6 +68,7 @@ class Search extends React.Component {
    }
 
    createQueryStringURL() {
+      // Create search URL using component state parameters
       var esc = encodeURIComponent;
       var query = Object.keys(this.state)
          .map(k => esc(k) + '=' + esc(this.state[k]))
@@ -74,7 +77,9 @@ class Search extends React.Component {
       return query;
    }
 
+   // Event delegation
    onTextUpdate(event) {
+      // If user types in textbox, textarea or clicks on radio buttons, that event is handled here
       if (event.target.tagName === "INPUT" ||
          event.target.tagName === "TEXTAREA" ||
          event.target.tagName === "RADIO" ||
@@ -117,7 +122,9 @@ class Search extends React.Component {
       }
    }
 
+   // Event delegation
    onFormClick(event) {
+      // If user clicks on clear or save button, that event is handled here
       if (event.target.tagName === "BUTTON") {
          const dataAttribute = event.target.dataset.action;
          switch (dataAttribute) {
@@ -148,6 +155,7 @@ class Search extends React.Component {
    }
 
    deleteBook(id) {
+      // Confirm before deleting a book
       let deleteBook = confirm("Are you sure you want to delete this book ?");
       if (deleteBook) {
          this.props.deleteBook(id);

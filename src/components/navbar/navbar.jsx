@@ -7,6 +7,7 @@ function Navbar(props) {
    const ref = useRef();
 
    useEffect(() => {
+      // When page is launched, add 'active' class to selected page
       const pathName = history.location.pathname;
       let aElement;
       switch (pathName) {
@@ -32,6 +33,7 @@ function Navbar(props) {
    })
 
    function onNavClick(event) {
+      // On click, remove 'active' class from previously selected element and add to new
       let eventTarget = event.target;
       if (eventTarget.tagName === "A") {
          // Remove active class

@@ -33,6 +33,7 @@ class App extends Component {
    }
 
    onRouteChanged() {
+      // Hide navbar if user is on edit book page
       if (this.props.location.pathname.includes("/edit-book")) {
          this.setState({
             showNavbar: false

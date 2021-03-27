@@ -125,12 +125,16 @@ class Search extends React.Component {
                this.props.history.push("/search-books");
                break;
             case "search":
-               this.setState({
-                  showResults: true
-               }, function callBack() {
-                  let queryURL = this.createQueryStringURL();
-                  this.props.history.push("/search-books?" + queryURL);
-               });
+               if (this.state.operator === "AND" || this.state.operator === "OR") {
+                  this.setState({
+                     showResults: true
+                  }, function callBack() {
+                     let queryURL = this.createQueryStringURL();
+                     this.props.history.push("/search-books?" + queryURL);
+                  });
+               } else {
+                  alert("Please select a valid Search type operator");
+               }
                break;
             default:
                break;

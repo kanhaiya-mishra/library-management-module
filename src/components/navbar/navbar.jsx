@@ -53,9 +53,9 @@ function Navbar(props) {
       return (
          <nav id="navbar">
             <ul ref={ref} onClick={onNavClick}>
-               <li><a data-href="search-books">Search books</a></li>
                <li><a data-href="all-books">All books</a></li>
                <li><a data-href="add-book">Add book</a></li>
+               <li><a data-href="search-books">Search books</a></li>
                {/* <li><a data-href="edit-book">Edit book</a></li> */}
             </ul>
          </nav>

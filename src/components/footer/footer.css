@@ -7,3 +7,15 @@ footer {
    padding: 0 16px;
    justify-content: space-between;
 }
+
+@media only screen and (max-width: 468px) {
+   footer>span {
+      font-size: 12px;
+   }
+}
+
+@media only screen and (max-width: 300px) {
+   footer>span {
+      font-size: 8px;
+   }
+}

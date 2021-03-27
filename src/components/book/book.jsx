@@ -45,13 +45,15 @@ function Book(props) {
 
    return (
       <form className="add-edit-book" onChange={onTextUpdate} onClick={onFormClick} onSubmit={(event) => event.preventDefault()}>
-         <div><div>Book name: </div> <input data-book-meta="book-name" maxLength={BOOK_NAME_LENGTH} defaultValue={props.book.name}></input>
-            <span className="counter">{props.book.name.length}/{BOOK_NAME_LENGTH}</span></div>
-         <div><div>Author name: </div> <input data-book-meta="author-name" maxLength={BOOK_AUTHOR_LENGTH} defaultValue={props.book.author}></input>
-            <span className="counter">{props.book.author.length}/{BOOK_AUTHOR_LENGTH}</span></div>
-         <div><div>Published on: </div> <input data-book-meta="book-published-on" placeholder="DD-MM-YYYY" defaultValue={props.book.publishedOn}></input></div>
-         <div><div>Description: </div> <textarea data-book-meta="book-description" maxLength={BOOK_DESCRIPTION_LENGTH} defaultValue={props.book.description}></textarea>
-            <span className="counter">{props.book.description.length}/{BOOK_DESCRIPTION_LENGTH}</span></div>
+         <div><div>Book name: </div>
+            <span><input data-book-meta="book-name" maxLength={BOOK_NAME_LENGTH} value={props.book.name}></input>
+               <span className="counter">{props.book.name.length}/{BOOK_NAME_LENGTH}</span></span></div>
+         <div><div>Author name: </div>
+            <span><input data-book-meta="author-name" maxLength={BOOK_AUTHOR_LENGTH} value={props.book.author}></input>
+               <span className="counter">{props.book.author.length}/{BOOK_AUTHOR_LENGTH}</span></span></div>
+         <div><div>Published on: </div> <input data-book-meta="book-published-on" placeholder="DD-MM-YYYY" value={props.book.publishedOn}></input></div>
+         <div><div>Description: </div><span><textarea data-book-meta="book-description" maxLength={BOOK_DESCRIPTION_LENGTH} value={props.book.description}></textarea>
+            <span className="counter">{props.book.description.length}/{BOOK_DESCRIPTION_LENGTH}</span></span></div>
          <div className="button-container">
             <button data-action="clear">Clear</button> <button data-action="save">Save</button>
          </div>

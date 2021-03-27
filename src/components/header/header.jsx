@@ -4,7 +4,7 @@ import "./header.css";
 function Header() {
    return (
       <header>
-         <h2>Simple Library Management Module</h2>
+         <span>Simple Library Management Module</span>
       </header>
    );
 }

@@ -18,3 +18,15 @@
 .full-width {
    width: 100%;
 }
+
+@media only screen and (max-width: 468px) {
+   #main-section {
+      height: calc(100vh - 56px);
+   }
+}
+
+@media only screen and (max-width: 300px) {
+   #main-section {
+      height: calc(100vh - 52px);
+   }
+}

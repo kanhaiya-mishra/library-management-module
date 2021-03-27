@@ -11,7 +11,7 @@ import AllBooks from "./views/all-books/all-books";
 import AddBook from "./views/add-book/add-book";
 import EditBook from "./views/edit-book/edit-book";
 
-const NotFoundRedirect = () => <Redirect to='/search-books' />
+const NotFoundRedirect = () => <Redirect to='/all-books' />
 
 class App extends Component {
 
@@ -54,9 +54,9 @@ class App extends Component {
                   className={this.state.showNavbar ? "app-components" : "app-components full-width"}
                >
                   <Switch>
-                     <Route exact path="/search-books" component={Search} />
                      <Route exact path="/all-books" component={AllBooks} />
                      <Route exact path="/add-book" component={AddBook} />
+                     <Route exact path="/search-books" component={Search} />
                      <Route path="/edit-book/:bookId" component={EditBook} />
                      <Route component={NotFoundRedirect} />
                   </Switch>

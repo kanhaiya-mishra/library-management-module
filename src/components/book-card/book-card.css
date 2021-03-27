@@ -1,0 +1,45 @@
+.card {
+   width: 100%;
+   min-height: 100px;
+   max-width: 800px;
+   box-shadow: 0 4px 8px 0 grey;
+   margin: 16px 0px;
+}
+
+.card-container {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   padding: 8px;
+}
+
+.book-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 8px;
+   width: 100%;
+}
+
+.button-container {
+   display: flex;
+}
+
+.edit-button {
+   margin-right: 8px;
+}
+
+.book-author,
+.book-time {
+   font-size: 12px;
+   margin-bottom: 8px;
+}
+
+.ellipsis {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.book-description {}

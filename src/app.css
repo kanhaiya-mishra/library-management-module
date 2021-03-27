@@ -1,0 +1,20 @@
+* {
+   margin: 0;
+   box-sizing: border-box;
+   font-family: Mulish, Helvetica, sans-serif;
+}
+
+#main-section {
+   display: flex;
+   width: 100%;
+   height: calc(100vh - 60px);
+}
+
+.app-components {
+   overflow-y: auto;
+   width: 75%;
+}
+
+.full-width {
+   width: 100%;
+}

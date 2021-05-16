@@ -13,24 +13,23 @@
   "devDependencies": {
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
+    "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "axios": "^0.21.1",
     "babel-loader": "^8.0.2",
     "babel-plugin-transform-runtime": "^6.23.0",
     "css-loader": "^1.0.0",
-    "style-loader": "^0.23.0",
-    "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.8",
-    "@babel/plugin-transform-runtime": "^7.13.10",
-    "axios": "^0.21.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "uuid": "^8.3.2"
-  },
-  "dependencies": {}
+    "style-loader": "^0.23.0",
+    "uuid": "^8.3.2",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.8"
+  }
 }
